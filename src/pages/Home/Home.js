@@ -91,7 +91,7 @@ class Home extends Component {
 						<img src={require('../../assets/images/geovanna-icon-rings.svg')} alt="Imagem de dois anéis de noivado" />
 						<h3>Seré um prazer<br/>conversar com vocês!</h3>
 						<h4>Whatsapp e Telefone</h4>
-						<p class="bigger"><a href="tel:43996923296">(43) 996 923 296</a><small>clique no número!</small></p>
+						<p className="bigger"><a href="tel:43996923296">(43) 996 923 296</a><small>clique no número!</small></p>
 						<h4>E-mail</h4>
 						<p><a href="mailto:geovannagarcia.assesoria@gmail.com">geovannagarcia.assesoria@gmail.com</a></p>
 						<ul>

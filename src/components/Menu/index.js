@@ -3,6 +3,13 @@ import React, { Component } from 'react'
 import './menu.css'
 
 class Menu extends Component {
+	constructor(props){
+		super(props)
+		this.setClick = this.setClick.bind(this)
+	}
+	setClick(e){
+		document.getElementById(e.target.getAttribute('data-target')).scrollIntoView({behavior: 'smooth', block: 'start'})
+	}
 	render() {
 		return (
 			<nav id="header-menu">
@@ -11,7 +18,7 @@ class Menu extends Component {
 						<div title="Menu" className="hamburguer d-xs-block d-sm-block d-md-block d-lg-none">
 							<span></span>
 						</div>
-						<a href="" className="a-header" data-menu="top">
+						<a href="" className="a-header">
 							<img src={require('../../assets/images/geovanna-logo-nav.svg')} alt="Logotipo Geovanna"/>
 						</a>
 					</header>
@@ -19,19 +26,19 @@ class Menu extends Component {
 						<div className="menu-container nav navbar-nav">
 							<ul>
 								<li className="menu-item">
-									<a href="#apresentacao" data-menu="true">Apresentação</a>
+									<a data-target="presentation" onClick={this.setClick}>Apresentação</a>
 								</li>
 								<li className="menu-item">
-									<a href="#sobre" data-menu="true">Sobre</a>
+									<a data-target="about" onClick={this.setClick}>Sobre</a>
 								</li>
 								<li className="menu-item">
-									<a href="#servicos" data-menu="true">Serviços</a>
+									<a data-target="services" onClick={this.setClick}>Serviços</a>
 								</li>
 								<li className="menu-item">
-									<a href="#depoimentos" data-menu="true">Depoimentos</a>
+									<a data-target="testmonials" onClick={this.setClick}>Depoimentos</a>
 								</li>
 								<li className="menu-item">
-									<a href="#contato" data-menu="true">Contato</a>
+									<a data-target="contact" onClick={this.setClick}>Contato</a>
 								</li>
 							</ul>
 						</div>
@@ -40,19 +47,19 @@ class Menu extends Component {
 						<div className="menu-container nav navbar-nav">
 							<ul>
 								<li className="menu-item">
-									<a href="#apresentacao" data-menu="true">Apresentação</a>
+									<a href="#apresentacao">Apresentação</a>
 								</li>
 								<li className="menu-item">
-									<a href="#sobre" data-menu="true">Sobre</a>
+									<a href="#sobre">Sobre</a>
 								</li>
 								<li className="menu-item">
-									<a href="#servicos" data-menu="true">Serviços</a>
+									<a href="#servicos">Serviços</a>
 								</li>
 								<li className="menu-item">
-									<a href="#depoimentos" data-menu="true">Depoimentos</a>
+									<a href="#depoimentos">Depoimentos</a>
 								</li>
 								<li className="menu-item">
-									<a href="#contato" data-menu="true">Contato</a>
+									<a href="#contato">Contato</a>
 								</li>
 							</ul>
 						</div>
