@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import DocumentMeta         from 'react-document-meta'
+
+// Configs
 import { MetaTag }          from '../../configs/'
+
+//Components
 import Menu                 from '../../components/Menu'
 import Section              from '../../components/Section'
 import Carousel             from '../../components/Carousel'
@@ -11,7 +15,16 @@ import ContentAbout         from '../../components/Content/ContentAbout'
 import ContentServices      from '../../components/Content/ContentServices'
 import ContentContact       from '../../components/Content/ContentContact'
 
+//Plugins
+import 'jquery.mousewheel'
+import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
+import { PluginScrollReveal }   from '../../plugins/plugin-scroll-reveal'
+
 class Home extends Component {
+	componentDidMount(){
+		this.pluginNiceScroll   = new PluginNiceScroll()
+		this.pluginScrollReveal = new PluginScrollReveal()
+	}
 	render() {
 		return(
 			<DocumentMeta {...MetaTag}>

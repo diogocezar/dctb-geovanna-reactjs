@@ -5,7 +5,7 @@ class ContentHome extends Component {
     render() {
         return (
             <Fragment>
-                <h2>O grande momento está chegando?</h2>
+                <h2 className="sr-1">O grande momento está chegando?</h2>
                 <h3>Vocês vão se casar? Não se preocupe!</h3>
                 <h4>Sou a <span className="hl">Geovanna Garcia</span>,</h4>
                 <h4>Estou aqui para lhe ajudar</h4>

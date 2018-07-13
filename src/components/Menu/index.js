@@ -1,14 +1,87 @@
 import React, { Component } from 'react'
+import $ from 'jquery'
 
 import './menu.css'
 
 class Menu extends Component {
 	constructor(props){
 		super(props)
-		this.setClick = this.setClick.bind(this)
+		this.configs = {
+			'senseSpeed'    : 5,
+			'previusScroll' : 0,
+			'imediate'      : 10,
+			'openMenu'      : false,
+		}
 	}
-	setClick(e){
-		document.getElementById(e.target.getAttribute('data-target')).scrollIntoView({behavior: 'smooth', block: 'start'})
+	componentDidMount() {
+		this.setDebounce()
+		this.setHamburguer()
+		this.setLinks()
+	}
+	debounce(func, wait, immediate){
+		let timeout
+		return function() {
+			let context = this, args = arguments
+			let later = function() {
+				timeout = null
+				if (!immediate) func.apply(context, args)
+			}
+			let callNow = immediate && !timeout
+			clearTimeout(timeout)
+			timeout = setTimeout(later, wait)
+			if (callNow) func.apply(context, args)
+		}
+	}
+	setHamburguer(){
+		$(".hamburguer").on("click", function(e) {
+			e.preventDefault();
+			$(this).toggleClass("active");
+			$(".menu-mobile").toggleClass("active");
+			setTimeout(function () {
+				$(".menu-mobile").toggleClass("end");
+			}, 500);
+		});
+	}
+	setDebounce() {
+		const self = this
+		$(document).scroll(self.debounce(function () {
+			self.go()
+		}, self.configs.imediate));
+	}
+	go() {
+		let scroller = $(document).scrollTop();
+		let offset = $(window).height() * 1 / 6;
+		if (scroller - this.configs.senseSpeed > this.configs.previousScroll && scroller > offset) {
+			$('#header-menu').addClass('off');
+			$('#header-menu').removeClass('on');
+			if ($(".menu-mobile").hasClass('active')) {
+				$(".hamburguer").toggleClass("active");
+				$(".menu-mobile").toggleClass("active");
+				setTimeout(function () {
+					$(".menu-mobile").toggleClass("end");
+				}, 500);
+			}
+		} else if (scroller + this.configs.senseSpeed < this.configs.previousScroll && scroller > offset) {
+			$('#header-menu').addClass('on');
+			$('#header-menu').removeClass('off');
+		}
+		this.configs.previousScroll = scroller;
+	}
+	setLinks(){
+		$('[data-menu="true"]').on("click", function (e) {
+			e.preventDefault();
+			if ($(".menu-mobile").hasClass('active')) {
+				$(".hamburguer").toggleClass("active")
+				$(".menu-mobile").toggleClass("active")
+				setTimeout(function () {
+					$(".menu-mobile").toggleClass("end")
+				}, 500)
+			}
+			let o = $(this)
+			$("html, body").stop().animate({
+				scrollTop: $(o.attr("href")).offset().top
+			}, 1000);
+		})
 	}
 	render() {
 		return (
@@ -26,19 +99,19 @@ class Menu extends Component {
 						<div className="menu-container nav navbar-nav">
 							<ul>
 								<li className="menu-item">
-									<a data-target="presentation" onClick={this.setClick}>Apresentação</a>
+									<a href="#presentation" data-menu="true">Apresentação</a>
 								</li>
 								<li className="menu-item">
-									<a data-target="about" onClick={this.setClick}>Sobre</a>
+									<a href="#about" data-menu="true">Sobre</a>
 								</li>
 								<li className="menu-item">
-									<a data-target="services" onClick={this.setClick}>Serviços</a>
+									<a href="#services" data-menu="true">Serviços</a>
 								</li>
 								<li className="menu-item">
-									<a data-target="testmonials" onClick={this.setClick}>Depoimentos</a>
+									<a href="#testmonials" data-menu="true">Depoimentos</a>
 								</li>
 								<li className="menu-item">
-									<a data-target="contact" onClick={this.setClick}>Contato</a>
+									<a href="#contact" data-menu="true">Contato</a>
 								</li>
 							</ul>
 						</div>
@@ -47,19 +120,19 @@ class Menu extends Component {
 						<div className="menu-container nav navbar-nav">
 							<ul>
 								<li className="menu-item">
-									<a href="#apresentacao">Apresentação</a>
+									<a href="#presentation" data-menu="true">Apresentação</a>
 								</li>
 								<li className="menu-item">
-									<a href="#sobre">Sobre</a>
+									<a href="#about" data-menu="true">Sobre</a>
 								</li>
 								<li className="menu-item">
-									<a href="#servicos">Serviços</a>
+									<a href="#services" data-menu="true">Serviços</a>
 								</li>
 								<li className="menu-item">
-									<a href="#depoimentos">Depoimentos</a>
+									<a href="#testmonials" data-menu="true">Depoimentos</a>
 								</li>
 								<li className="menu-item">
-									<a href="#contato">Contato</a>
+									<a href="#contact" data-menu="true">Contato</a>
 								</li>
 							</ul>
 						</div>
