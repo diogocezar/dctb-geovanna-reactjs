@@ -4,8 +4,8 @@
 @import '../../assets/styles/includes/_sizes.scss';
 
 section{
-    padding-top: 8rem;
-    padding-bottom: 6rem;
+    padding-top: 7rem;
+    padding-bottom: 5rem;
     @include responsive(s3) {
         padding-top: 6rem;
         padding-bottom: 4rem;
@@ -36,6 +36,19 @@ section#apresentacao{
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(rgba(74, 74, 105, 0.80), rgba(74, 74, 105, 0.80)),
-	url('../../assets/images/geovanna-bg-home.jpg');
+	url('../../assets/images/geovanna-bg-presentation.jpg');
+	background-position: center center;
+}
+
+section#servicos {
+	background: linear-gradient(rgba(34, 34, 59, 0.84), rgba(34, 34, 59, 0.98)),
+	url('../../assets/images/geovanna-bg-services.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+
+section#contato {
+	background: linear-gradient(rgba(34, 34, 59, 0.80), rgba(34, 34, 59, 0.90)),
+	url('../../assets/images/geovanna-bg-contact.jpg');
 	background-position: center center;
 }
