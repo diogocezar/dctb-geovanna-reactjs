@@ -1,0 +1,126 @@
+@import '../../assets/styles/includes/_fonts-styles.scss';
+@import '../../assets/styles/includes/_mixins.scss';
+@import '../../assets/styles/includes/_colors.scss';
+@import '../../assets/styles/includes/_sizes.scss';
+@import '../../assets/styles/includes/_shared.scss';
+
+#content-about{
+    h2{
+		font-family: $font-secondary;
+		color: $color-dark-purple;
+		font-size: 6rem;
+		margin-bottom: 3rem;
+		@include responsive(s3) { text-align: center; font-size: 4rem; margin-bottom: 1rem; }
+	}
+	h3{
+		color: $color-light-purple;
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+		@include responsive(s3) { text-align: center; font-size: 1rem; margin-bottom: 1rem; }
+	}
+	p{
+		font-family: $font-tertiary;
+		color: $color-dark-purple;
+		line-height: 2rem;
+		margin-bottom: 2rem;
+		@include responsive(s3) { text-align: center; }
+	}
+	img{
+		height: 120px;
+		width: 120px;
+		margin-top: 1rem;
+		margin-bottom: 4rem;
+		@include responsive(s3) {
+			height: 100px;
+			left: 50%;
+			position: relative;
+			-webkit-transform: translate(-50%, 0) !important;
+			-moz-transform: translate(-50%, 0) !important;
+			-ms-transform: translate(-50%, 0) !important;
+			transform: translate(-50%, 0) !important;
+		}
+		@include responsive(s4) {
+			height: 80px;
+		}
+	}
+}
+
+#content-services{
+h2{
+		font-family: $font-primary;
+		text-align: center;
+		font-size: 3rem;
+		color: $color-light;
+		margin-bottom: 3rem;
+		@include responsive(s3) {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+		@include responsive(s4) {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+	img{
+		height: 120px;
+		@extend .center-translate;
+		margin-bottom: 3rem;
+		@include responsive(s3) {
+			height: 100px;
+			margin-bottom: 2rem;
+		}
+
+		@include responsive(s4) {
+			height: 80px;
+			margin-bottom: 1.5rem;
+		}
+	}
+	h3{
+		font-family: $font-primary;
+		text-align: center;
+		font-size: 2rem;
+		line-height: 2.4rem;
+		color: $color-light-purple;
+		.hl{
+			font-size: 3rem;
+			@include responsive(s3) {
+				font-size: 2.5rem;
+				margin-bottom: 2.5rem;
+			}
+
+			@include responsive(s4) {
+				font-size: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+		margin-bottom: 2rem;
+		@include responsive(s3) {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+		@include responsive(s4) {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+	p{
+		font-family: $font-tertiary;
+		color: $color-light;
+		text-align: center;
+		padding: 0 15%;
+		font-size: 1.2rem;
+		line-height: 2rem;
+		@include responsive(s3) {
+			padding: 0;
+			margin-bottom: 4rem;
+			font-size: 1rem;
+		}
+
+	}
+	button{
+		margin-top: 3rem;
+		@include responsive(s3) {
+			margin-top: 1.5rem;
+		}
+	}
+}

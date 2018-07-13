@@ -31,7 +31,7 @@ section#home{
 	}
 }
 
-section#apresentacao{
+section#presentation{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -40,14 +40,14 @@ section#apresentacao{
 	background-position: center center;
 }
 
-section#servicos {
+section#services{
 	background: linear-gradient(rgba(34, 34, 59, 0.84), rgba(34, 34, 59, 0.98)),
 	url('../../assets/images/geovanna-bg-services.jpg');
 	background-position: center center;
 	background-size: cover;
 }
 
-section#contato {
+section#contact{
 	background: linear-gradient(rgba(34, 34, 59, 0.80), rgba(34, 34, 59, 0.90)),
 	url('../../assets/images/geovanna-bg-contact.jpg');
 	background-position: center center;
