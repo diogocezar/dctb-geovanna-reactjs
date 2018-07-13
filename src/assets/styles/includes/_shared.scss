@@ -1,0 +1,112 @@
+/// Sass Boilerplate to start new project with some functionalities.
+/// @author Diogo Cezar <diogo@diogocezar.com>
+
+// Shared
+// Shared Configurations used in all pages
+
+*{
+  outline: none;
+}
+
+html{
+	font-size: $size-base;
+}
+
+body{
+  font-size: $size-base;
+  font-family: $font-primary;
+  background-color: $color-light;
+  color: $color-purple;
+}
+*,
+*:after,
+*:before {
+  @include border-box;
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+// Forms Reset IOS
+
+input, textarea, select{
+  -webkit-appearance: none;
+  border-radius: 0px;
+}
+
+// Links
+
+a{
+  color: $color-light;
+  text-decoration: none;
+  &:hover{
+    color: $color-light;
+    text-decoration: none;
+  }
+  &:focus{
+    color: $color-light;
+    text-decoration: none;
+  }
+  &:active{
+    color: $color-light;
+    text-decoration: none;
+  }
+  &:visited{
+    color: $color-light;
+    text-decoration: none;
+  }
+}
+
+// Selection
+
+::-moz-selection {
+  color: $color-light;
+  background: $color-purple;
+}
+
+::selection {
+  color: $color-light;
+  background: $color-purple;
+}
+
+// Paragraph
+
+p{
+  font-size: $size-normal;
+}
+
+// Equal Height
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+//Generals
+
+*{
+	outline: none!important;
+}
+
+// Loader
+
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: $color-dark-purple;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+	img{
+		height: 300px;
+		width: 300px;
+	}
+}
