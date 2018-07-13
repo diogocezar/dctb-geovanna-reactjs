@@ -60,7 +60,7 @@ class Home extends Component {
 						<div className="row">
 							<div className="col">
 								<h2>Tipos de Serviços</h2>
-								<img src={require('../../assets/images/geovanna-icon-ring.svg')} alg="Ícone de um anel de casamento"/>
+								<img src={require('../../assets/images/geovanna-icon-ring.svg')} alt="Ícone de um anel de casamento"/>
 							</div>
 						</div>
 						<div className="row">
