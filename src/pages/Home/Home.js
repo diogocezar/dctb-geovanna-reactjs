@@ -20,10 +20,18 @@ import 'jquery.mousewheel'
 import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
 import { PluginScrollReveal }   from '../../plugins/plugin-scroll-reveal'
 
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
+
+const $ = window.$;
+
 class Home extends Component {
 	componentDidMount(){
 		this.pluginNiceScroll   = new PluginNiceScroll()
 		this.pluginScrollReveal = new PluginScrollReveal()
+		$(document).ready(function () {
+			$('.owl-carousel').owlCarousel();
+		});
 	}
 	render() {
 		return(
@@ -52,6 +60,15 @@ class Home extends Component {
 				<Section id="testmonials">
 					<Content id="content-testmonials">
 						<Carousel></Carousel>
+						<div class="owl-carousel owl-theme">
+							<div> Your Content </div>
+							<div> Your Content </div>
+							<div> Your Content </div>
+							<div> Your Content </div>
+							<div> Your Content </div>
+							<div> Your Content </div>
+							<div> Your Content </div>
+						</div>
 					</Content>
 				</Section>
 				<Section id="contact">
