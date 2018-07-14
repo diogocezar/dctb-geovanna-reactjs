@@ -9,7 +9,7 @@ class Menu extends Component {
 		this.configs = {
 			'senseSpeed'    : 5,
 			'previusScroll' : 0,
-			'imediate'      : 50,
+			'imediate'      : 10,
 			'openMenu'      : false,
 		}
 	}

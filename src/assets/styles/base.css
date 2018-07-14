@@ -7,6 +7,14 @@
   font-family: "AfterMidnite";
   src: url("../fonts/AfterMidnite.eot?") format("eot"), url("../fonts/AfterMidnite.woff") format("woff"), url("../fonts/AfterMidnite.ttf") format("truetype"); }
 
+.center-translate {
+  left: 50%;
+  position: relative;
+  -webkit-transform: translate(-50%, 0) !important;
+  -moz-transform: translate(-50%, 0) !important;
+  -ms-transform: translate(-50%, 0) !important;
+  transform: translate(-50%, 0) !important; }
+
 * {
   outline: none; }
 
@@ -62,11 +70,3 @@ p {
 
 * {
   outline: none !important; }
-
-.center-translate {
-  left: 50%;
-  position: relative;
-  -webkit-transform: translate(-50%, 0) !important;
-  -moz-transform: translate(-50%, 0) !important;
-  -ms-transform: translate(-50%, 0) !important;
-  transform: translate(-50%, 0) !important; }
