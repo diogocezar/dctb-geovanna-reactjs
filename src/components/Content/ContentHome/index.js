@@ -13,7 +13,8 @@ class ContentHome extends Component {
                     id="btn-contact"
                     label="ENTRE EM CONTATO"
                     type="transparent"
-                    sr="sr-2">
+                    sr="sr-2"
+                    action="goto-contact">
                 </Button>
             </Fragment>
         );

@@ -1,0 +1,24 @@
+@import '../../assets/styles/includes/_fonts-styles.scss';
+@import '../../assets/styles/includes/_mixins.scss';
+@import '../../assets/styles/includes/_colors.scss';
+@import '../../assets/styles/includes/_sizes.scss';
+@import '../../assets/styles/includes/_shared.scss';
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: $color-dark-purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}

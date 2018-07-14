@@ -15,8 +15,8 @@ import ContentServices      from '../../components/Content/ContentServices'
 import ContentContact       from '../../components/Content/ContentContact'
 import ContentTestmonials   from '../../components/Content/ContentTestmonials'
 
+
 //Plugins
-import 'jquery.mousewheel'
 import { PluginMouseWheel }     from '../../plugins/plugin-mouse-wheel'
 import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
 import { PluginScrollReveal }   from '../../plugins/plugin-scroll-reveal'
@@ -32,6 +32,7 @@ class Home extends Component {
 			this.pluginScrollReveal = new PluginScrollReveal()
 			this.pluginOwlCarousel  = new PluginOwlCarousel()
 			this.pluginMouseWheel   = new PluginMouseWheel()
+			$('#loader').fadeOut();
 		})
 	}
 	render() {
