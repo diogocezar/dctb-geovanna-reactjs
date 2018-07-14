@@ -7,31 +7,32 @@ import { MetaTag }          from '../../configs/'
 //Components
 import Menu                 from '../../components/Menu'
 import Section              from '../../components/Section'
-import Carousel             from '../../components/Carousel'
 import Content              from '../../components/Content'
 import ContentHome          from '../../components/Content/ContentHome'
 import ContentPresentation  from '../../components/Content/ContentPresentation'
 import ContentAbout         from '../../components/Content/ContentAbout'
 import ContentServices      from '../../components/Content/ContentServices'
 import ContentContact       from '../../components/Content/ContentContact'
+import ContentTestmonials   from '../../components/Content/ContentTestmonials'
 
 //Plugins
 import 'jquery.mousewheel'
+import { PluginMouseWheel }     from '../../plugins/plugin-mouse-wheel'
 import { PluginNiceScroll }     from '../../plugins/plugin-nice-scroll'
 import { PluginScrollReveal }   from '../../plugins/plugin-scroll-reveal'
+import { PluginOwlCarousel }    from '../../plugins/plugin-owl-carousel'
 
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
-
-const $ = window.$;
+// JQuery
+const $ = window.$
 
 class Home extends Component {
 	componentDidMount(){
-		this.pluginNiceScroll   = new PluginNiceScroll()
-		this.pluginScrollReveal = new PluginScrollReveal()
-		$(document).ready(function () {
-			$('.owl-carousel').owlCarousel();
-		});
+		$(document).ready(() => {
+			this.pluginNiceScroll   = new PluginNiceScroll()
+			this.pluginScrollReveal = new PluginScrollReveal()
+			this.pluginOwlCarousel  = new PluginOwlCarousel()
+			this.pluginMouseWheel   = new PluginMouseWheel()
+		})
 	}
 	render() {
 		return(
@@ -59,16 +60,7 @@ class Home extends Component {
 				</Section>
 				<Section id="testmonials">
 					<Content id="content-testmonials">
-						<Carousel></Carousel>
-						<div class="owl-carousel owl-theme">
-							<div> Your Content </div>
-							<div> Your Content </div>
-							<div> Your Content </div>
-							<div> Your Content </div>
-							<div> Your Content </div>
-							<div> Your Content </div>
-							<div> Your Content </div>
-						</div>
+						<ContentTestmonials></ContentTestmonials>
 					</Content>
 				</Section>
 				<Section id="contact">
